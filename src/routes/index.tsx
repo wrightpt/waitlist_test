@@ -1,112 +1,70 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
 
-import Counter from "../components/starter/counter/counter";
-import Hero from "../components/starter/hero/hero";
-import Infobox from "../components/starter/infobox/infobox";
-import Starter from "../components/starter/next-steps/next-steps";
+import Img3 from '~/routes/3.png?jsx';import { component$, useStore, $ } from '@builder.io/qwik';
+import './login5.css'; // Assuming you have CSS modules set up or a similar mechanism to include CSS
+import logo from './3.png';
+import logo1 from './1.webp';
+
+
+interface UIState {
+  status: 'idle' | 'submitting' | 'success' | 'error';
+  errorMessage: string | null;
+}
 
 export default component$(() => {
+  const uiState = useStore<UIState>({
+    status: 'idle',
+    errorMessage: null,
+  });
+
   return (
-    <>
-      <Hero />
-      <Starter />
+    <div class="container">
+      <div class="header">
+      <img src={logo1} alt="Monero Prediction Market Logo" width="768" height="768" class="logo" />
 
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
-
-      <div class="container container-center container-spacing-xl">
-        <h3>
-          You can <span class="highlight">count</span>
-          <br /> on me
-        </h3>
-        <Counter />
+        <h1>Join the Waiting List for Monero Prediction Market</h1>
       </div>
+      <form id="waitingListForm" onSubmit$={$(async (event: SubmitEvent) => {
+        event.preventDefault();
+        uiState.status = 'submitting';
+        const form = event.target as HTMLFormElement;
+        const email = form.email.value;
 
-      <div class="container container-flex">
-        <Infobox>
-          <div q:slot="title" class="icon icon-cli">
-            CLI Commands
-          </div>
-          <>
-            <p>
-              <code>npm run dev</code>
-              <br />
-              Starts the development server and watches for changes
-            </p>
-            <p>
-              <code>npm run preview</code>
-              <br />
-              Creates production build and starts a server to preview it
-            </p>
-            <p>
-              <code>npm run build</code>
-              <br />
-              Creates production build
-            </p>
-            <p>
-              <code>npm run qwik add</code>
-              <br />
-              Runs the qwik CLI to add integrations
-            </p>
-          </>
-        </Infobox>
-
-        <div>
-          <Infobox>
-            <div q:slot="title" class="icon icon-apps">
-              Example Apps
-            </div>
-            <p>
-              Have a look at the <a href="/demo/flower">Flower App</a> or the{" "}
-              <a href="/demo/todolist">Todo App</a>.
-            </p>
-          </Infobox>
-
-          <Infobox>
-            <div q:slot="title" class="icon icon-community">
-              Community
-            </div>
-            <ul>
-              <li>
-                <span>Questions or just want to say hi? </span>
-                <a href="https://qwik.builder.io/chat" target="_blank">
-                  Chat on discord!
-                </a>
-              </li>
-              <li>
-                <span>Follow </span>
-                <a href="https://twitter.com/QwikDev" target="_blank">
-                  @QwikDev
-                </a>
-                <span> on Twitter</span>
-              </li>
-              <li>
-                <span>Open issues and contribute on </span>
-                <a href="https://github.com/BuilderIO/qwik" target="_blank">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <span>Watch </span>
-                <a href="https://qwik.builder.io/media/" target="_blank">
-                  Presentations, Podcasts, Videos, etc.
-                </a>
-              </li>
-            </ul>
-          </Infobox>
-        </div>
+        try {
+          await fetch('/api/submit-waitlist', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+          });
+          uiState.status = 'success';
+        } catch (error) {
+          uiState.status = 'error';
+          uiState.errorMessage = 'Something went wrong. Please try again.';
+        }
+      })}>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        {uiState.status === 'idle' && (
+          <button type="submit">Join Waiting List</button>
+        )}
+        {uiState.status === 'submitting' && (
+          <button type="button" disabled>Submitting...</button>
+        )}
+        {uiState.status === 'success' && (
+          <p>Thank you for signing up!</p>
+        )}
+        {uiState.status === 'error' && (
+          <p class="error-message">{uiState.errorMessage}</p>
+        )}
+      </form>
+      <p>We will notify you when we launch!</p>
+      <div class="login-link">
+        {/* Already have an account? <a href="#">Login here.</a> */}
       </div>
-    </>
+    </div>
   );
 });
 
-export const head: DocumentHead = {
-  title: "Welcome to Qwik",
-  meta: [
-    {
-      name: "description",
-      content: "Qwik site description",
-    },
-  ],
-};
+
+

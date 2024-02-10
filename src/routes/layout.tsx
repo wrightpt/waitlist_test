@@ -24,15 +24,15 @@ export const useServerTimeLoader = routeLoader$(() => {
   };
 });
 
-export default component$(() => {
-  useStyles$(styles);
-  return (
-    <>
-      <Header />
-      <main>
-        <Slot />
-      </main>
-      <Footer />
-    </>
-  );
-});
+// export default component$(() => {
+//   useStyles$(styles);
+//   return (
+//     <>
+//       <Header />
+//       <main>
+//         <Slot />
+//       </main>
+//       <Footer />
+//     </>
+//   );
+// });
