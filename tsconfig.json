@@ -16,9 +16,10 @@
     "isolatedModules": true,
     "outDir": "tmp",
     "noEmit": true,
-    "types": ["node", "vite/client"],
+    "types": ["node", "vite/client",],
     "paths": {
       "~/*": ["./src/*"],
+       "typings.d.ts": ["./src/routes/typings.d.ts"],
     },
   },
   "files": ["./.eslintrc.cjs"],

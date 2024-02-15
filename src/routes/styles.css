@@ -212,3 +212,230 @@ button.button-small {
 .icon-community:before {
   background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' width='20px' height='20px' viewBox='0 0 256 256' id='Flat' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M246.40381 143.19434a4.00061 4.00061 0 0 1-5.60108-.7959A55.57857 55.57857 0 0 0 196 120a4 4 0 0 1 0-8 28 28 0 1 0-27.50732-33.26074 4.00013 4.00013 0 0 1-7.85987-1.49219 36.00191 36.00191 0 1 1 54.06494 37.50513 63.58068 63.58068 0 0 1 32.50147 22.84155A3.99993 3.99993 0 0 1 246.40381 143.19434Zm-57.24268 71.05273a3.9998 3.9998 0 1 1-7.1914 3.50391 60.02582 60.02582 0 0 0-107.93946 0 3.9998 3.9998 0 1 1-7.1914-3.50391 67.56008 67.56008 0 0 1 40.90625-35.20581 44 44 0 1 1 40.50976 0A67.56139 67.56139 0 0 1 189.16113 214.24707ZM128 176a36 36 0 1 0-36-36A36.04061 36.04061 0 0 0 128 176ZM60 112A28 28 0 1 1 87.50732 78.73828a3.99989 3.99989 0 1 0 7.85938-1.49219A36.00177 36.00177 0 1 0 41.30225 114.7522 63.5829 63.5829 0 0 0 8.79883 137.5957a4 4 0 1 0 6.39648 4.80469A55.58072 55.58072 0 0 1 60 120a4 4 0 0 0 0-8Z'/%3E%3C/svg%3E");
 }
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); */
+
+.intense-statement {
+  display: flex;
+
+
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'FFF Tusj Bold'; Always provide a fallback font */
+  font-family: 'Neon'; /* Always provide a fallback font */
+
+  flex-direction: column; /* for flex container */
+  /* gap: 600px; Adjust the value as needed */
+
+  /* color: #bcbcbc; */
+  color: #ffffff; /* White text */
+
+  font-size: 2.0rem;
+  font-style: italic;
+  font-weight: 1000;
+  line-height: 1.6;
+  text-align: center; /* Center align text for the effect */
+  max-width: 800px;
+  margin: 0 auto;
+  /* padding: 40px; */
+  /* padding-bottom: 20rem; */
+  /* background: #fff; */
+  background-color: rgba(34, 34, 34, 0.5); /* Semi-transparent background */
+
+  /* background-color: rgba(34, 34, 34, 0.8); Semi-transparent background */
+
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.0);
+  /* position: relative; */
+  perspective: 1500px; /* Needed for 3D effect */
+}
+
+.intense-statement,
+.intense-statement li {
+/* Your styles here */
+font-family: 'Neon'; /* Always provide a fallback font */
+
+/* font-family: 'FFF Tusj Bold'; Example */
+font-weight: 2000;
+color: #dacfcf; /* Example */
+/* More styles... */
+}
+
+/* Additional styling to make the list look good */
+.intense-statement {
+list-style-type: disc; /* or 'none' if you want to hide bullets */
+padding-left: 20px; /* Adjust as needed, gives space for bullets */
+margin: 0 auto;
+padding: 40px;
+/* ... other styles ... */
+}
+
+.intense-statement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(35, 43, 32, 0.2);
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.intense-statement:hover::before {
+  transform: scale(1.05);
+  background: rgba(255, 165, 0, 0);
+}
+
+.intense-statement span {
+  display: inline-block;
+  transition: transform 0.3s, text-shadow 0.3s;
+  transform: translateZ(0);
+  text-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.intense-statement:hover span {
+  transform: translateZ(30px);
+  text-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+
+/* Basic reset */
+/* * {
+    margin: 0;
+    padding: 100px;
+    box-sizing: border-box;
+} */
+
+/* Importing Google Fonts */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); */
+
+/* Gradient background with animation */
+/* body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    margin: 0;
+    animation: backgroundShift 30s ease infinite;
+} */
+
+/* Container with hover effect */
+ /* .container {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.7);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* For button animation */
+    /* min-height: 600px; Adjust the minimum height as needed */
+    /* padding: 60px; Increased padding to make the container taller */
+
+
+ /* }  */
+ 
+ 
+ /* @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  } */
+
+
+/* Logo floating animation */
+ /* @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }  */
+  
+  /* .logo {
+      max-width: 120px;
+      margin-bottom: 20px;
+      animation: float 6s ease-in-out infinite;
+  }
+   */
+
+   /* form input {
+    padding: 15px;
+    border: 1px solid #333;
+    background-color: #262626;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #ddd;
+} */
+
+/* Header with logo animation */
+/* .header {
+    margin-bottom: 30px;
+    animation: fadeInDown 0.5s both;
+} */
+
+/* form label,
+form input {
+    display: block;
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+} */
+
+/* form label {
+    text-align: left;
+    font-weight: 500;
+    color: #bbbbbb;
+} */
+
+  /* .container {
+        padding: 20px;
+        margin: 0 10px; /* Add some space on the sides on smaller screens */
+    /* } */ 
+
+    /* .logo {
+        max-width: 80px; /* Adjust logo size for smaller screens */
+    /* } */ 
+
+    /* form label,
+    form input,
+    form button {
+        width: 100%;
+    } */
+
+
+     /* .logo {
+    max-width: 50px;
+    margin-bottom: 20px;
+    animation: spin 5s linear infinite;
+}  */
+
+
+
+
+/* body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #2a2a2a);
+    background-size: 600% 600%;
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    margin: 0;
+    animation: gradientFlow 30s ease infinite;
+} */

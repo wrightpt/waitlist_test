@@ -1,43 +1,142 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@font-face {
+    font-family: 'Neon';
+    src: url('./neontubes2.woff2') format('woff2');
+       
+    font-weight: bold;
+    font-style: normal;
+    /* font-display: swap; This will show a fallback font until the custom font has loaded */
 
-/* Importing Google Fonts */
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); */
+  }
 
-/* Gradient background with animation */
-/* body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-    color: #ffffff;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-    margin: 0;
-    animation: backgroundShift 30s ease infinite;
-} */
+@font-face {
+    font-family: 'Honk';
+    src: url('./Honk-Regular-VariableFont_MORF\,SHLN.woff2') format('woff2');
+       
+    font-weight: bold;
+    font-style: normal;
+    /* font-display: swap; This will show a fallback font until the custom font has loaded */
 
+  }
+
+@font-face {
+    font-family: 'FFF Tusj Bold';
+    src: url('./FFF_Tusj.woff2') format('woff2');
+       
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap; /* This will show a fallback font until the custom font has loaded */
+
+  }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'FFF Tusj Bold'; 
+    /* Always provide a fallback font */
+    /* font-family: 'Honk'; */
+     /* Always provide a fallback font */
+     font-family: 'Neon'; 
+    /* Always provide a fallback font  */
+    /* justify-content: center; */
+
+
+
+
     background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #2a2a2a);
     background-size: 600% 600%;
-    color: #ffffff;
+    /* color: #9e1818; */
     line-height: 1.6;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column; /* Change to column to allow natural flow */
+    justify-content: flex-start; /* Align content to the top */
+    /* align-items: center; */
+    height: auto; /* Change to auto to accommodate all content */
+    min-height: 100vh; /* Ensure it's at least the height of the viewport */
     padding: 20px;
     margin: 0;
     animation: gradientFlow 30s ease infinite;
+    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-y: auto; /* Allow vertical scrolling */
 }
+
+.gradient-text {
+    font-size: 100px;
+    /* font-style: oblique; */
+    font-style: bold;
+    font-weight: 2000;
+    background: linear-gradient(45deg, rgb(0, 255, 115), rgb(176, 52, 52));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: rgb(218, 218, 231);
+    -webkit-text-fill-color: #df2f0cad;
+    justify-content: center;
+    width: 100%; /* Full width if it’s not a flex item */
+    text-align: center; /* Center text within the element itself */
+
+
+  } 
+
+/* login5.css */
+.divider-link {
+    display: block;
+    height: 20px; /* Adjust as needed */
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 2%;
+    background-color: rgba(255, 255, 255, 0.1); /* Visible on hover/focus */
+
+    /* background-color: transparent; */
+    /* text-decoration: none; */
+  }
+  
+  .divider-link:hover, .divider-link:focus {
+    background-color: rgba(255, 255, 255, 0.1); /* Visible on hover/focus */
+  }
+  
+
+
+
+
+
+.text-box-container {
+
+
+    display: flex;
+    flex-direction: column; /* for flex container */
+    gap: 20px; /* Adjust the value as needed */
+    color: #dacfcf;
+    font-size: 2.0rem;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center; /* Center align text for the effect */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    perspective: 1500px; /* Needed for 3D effect */
+    background-color: transparent;
+}
+
+
+/* Add this to your CSS */
+.full-page-background {
+    position: fixed; 
+    /* Fixed position to cover the entire page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./9.png'); 
+    /* Adjust the path to your image */ 
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
+    /* Ensure it's behind other content */
+   } 
+
+
 
 @keyframes backgroundShift {
     0%, 100% {
@@ -48,47 +147,200 @@ body {
     }
 }
 
-/* Container with hover effect */
+
+
  .container {
+
+    margin: auto;
+    width: 90%; /* Allow some space on the sides */
+    max-width: none; /* Override any max-width set elsewhere */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
     background-color: #222;
     border-radius: 8px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.7);
-    padding: 40px;
-    width: 100%;
+    padding: 60px;
     max-width: 450px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* For button animation */
-    min-height: 600px; /* Adjust the minimum height as needed */
-    padding: 60px; /* Increased padding to make the container taller */
+    overflow: hidden;
+    margin-top: 20px; /* Adjust the value as needed */
+    justify-content: center;
 
+    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
 
- } 
+  }
+  
 
 .container:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 35px rgba(0,0,0,0.8);
 }
 
-/* Header with logo animation */
-/* .header {
+
+
+  
+
+
+ /* .gradient-text {
+    font-size: 60px;
+    color: white;
+    text-align: center;
     margin-bottom: 30px;
-    animation: fadeInDown 0.5s both;
-} */
+    
+    background: linear-gradient(90deg, rgba(255, 0, 150, 0.75), rgba(0, 191, 255, 0.75));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    text-shadow: 
+       0 0 10px rgba(255, 0, 150, 0.75),
+      0 0 20px rgba(255, 0, 150, 0.75),
+      0 0 30px rgba(255, 0, 150, 0.75),
+      0 0 40px rgba(0, 191, 255, 0.75),
+      0 0 70px rgba(0, 191, 255, 0.75),
+      0 0 80px rgba(0, 191, 255, 0.75),
+      0 0 100px rgba(0, 191, 255, 0.75),
+      0 0 150px rgba(0, 191, 255, 0.75);  */
 
+      /* 0 0 10px rgba(255, 0, 150, 0.8),
+      0 0 20px rgba(255, 0, 150, 0.7),
+      0 0 30px rgba(255, 0, 150, 0.6),
+      0 0 40px rgba(0, 191, 255, 0.8),
+      0 0 70px rgba(0, 191, 255, 0.7),
+      0 0 80px rgba(0, 191, 255, 0.6),
+      0 0 100px rgba(150, 0, 255, 0.8),
+      0 0 150px rgba(150, 0, 255, 0.7); */
+    
+    /* animation: neon 1.5s ease-in-out infinite alternate;
+  }  */
+   /* @keyframes neon {
+    from {
+      text-shadow:
+        0 0 10px rgba(255, 0, 150, 0.75),
+        0 0 20px rgba(255, 0, 150, 0.75),
+        0 0 30px rgba(255, 0, 150, 0.75),
+        0 0 40px rgba(0, 191, 255, 0.75),
+        0 0 70px rgba(0, 191, 255, 0.75),
+        0 0 80px rgba(0, 191, 255, 0.75),
+        0 0 100px rgba(0, 191, 255, 0.75),
+        0 0 150px rgba(0, 191, 255, 0.75);
+    }
+    to {
+      text-shadow:
+        0 0 5px rgba(255, 0, 150, 0.75),
+        0 0 10px rgba(255, 0, 150, 0.75),
+        0 0 15px rgba(255, 0, 150, 0.75),
+        0 0 20px rgba(0, 191, 255, 0.75),
+        0 0 35px rgba(0, 191, 255, 0.75),
+        0 0 40px rgba(0, 191, 255, 0.75),
+        0 0 50px rgba(0, 191, 255, 0.75),
+        0 0 75px rgba(0, 191, 255, 0.75);
+    }}  */
 
+    /* @keyframes neon {
+        from {
+          text-shadow:
+            0 0 10px rgba(255, 0, 150, 0.8),
+            0 0 20px rgba(255, 0, 150, 0.7),
+            0 0 30px rgba(255, 0, 150, 0.6),
+            0 0 40px rgba(0, 191, 255, 0.8),
+            0 0 70px rgba(0, 191, 255, 0.7),
+            0 0 80px rgba(0, 191, 255, 0.6),
+            0 0 100px rgba(150, 0, 255, 0.8),
+            0 0 150px rgba(150, 0, 255, 0.7);
+        }
+        to {
+          text-shadow:
+            0 0 5px rgba(240, 120, 14, 0.8),
+            0 0 10px rgba(240, 120, 14, 0.7),
+            0 0 15px rgba(240, 0, 150, 0.6),
+            0 0 20px rgba(0, 191, 255, 0.8),
+            0 0 35px rgba(0, 191, 255, 0.7),
+            0 0 40px rgba(0, 191, 255, 0.6),
+            0 0 50px rgba(150, 0, 255, 0.8),
+            0 0 75px rgba(150, 0, 255, 0.7);
+        }
+      } */
 
+      .text-box-container,
+      .gradient-text-list,
+      .intense-statement {
+        padding: 10px; /* Reduced padding on smaller screens */
+        margin: 0 auto; /* Center-align these elements */
+        width: auto; /* Let them take the natural width */
+        max-width: 90%; /* Prevent them from getting too wide */
+      }
+  
+ 
+  .gradient-text-list {
+    list-style: none; /* Remove default list styling */
+    padding-left: 0; /* Remove default padding */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for list items */
+    border-radius: 10px; /* Rounded corners for the background */
+    display: inline-block; /* To wrap background tightly around the text */
+    padding: 20px; /* Padding inside the semi-transparent background */
+  }
+
+  .gradient-text-list li::before {
+    content: '• '; /* Unicode character for bullet */
+    color: white; /* Color of the bullet */
+    font-weight: bold; /* Make the bullet bold */
+    display: inline-block; /* Needed to position the bullet correctly */
+    width: 1em; /* Space for the bullet */
+    margin-left: -1em; /* Align the bullet outside the text */
+  }
+  
+  .gradient-text-list li {
+    font-size: 24px; /* Size of your list items */
+    line-height: 1.6; /* Adjust line height for readability */
+    background: inherit; /* Inherit the gradient background from .gradient-text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: white; /* Hide the original text color */
+    -webkit-text-fill-color: whitesmoke; /* Hide the original text color for Safari */
+    margin-bottom: 20px; /* Add space between list items */
+    /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);  */
+  }
+  .gradient-text-list li.typing-effect {
+    /* Apply the typing animation with a specific duration and delay based on the index of the item */
+    animation: typing 3s steps(40, end) forwards, blink-caret .75s step-end infinite;
+    /* Adjust the animation duration (e.g., 3s) and steps (e.g., 40) as needed */
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  
+  .typing-effect {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid white; /* The caret */
+    animation: blink-caret .75s step-end infinite;
+  }
+  
 
 
   /* Base size */
 .logo {
-    width: 50%;
+    width: 80%;
     height: auto;
-    max-width: 100px; /* Adjust based on your design */
+    max-width: 200px; /* Adjust based on your design */
     
     animation: spin 5s linear infinite;
 
   }
+
+
+
   
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
@@ -104,51 +356,81 @@ body {
     }
   }
 
- /* .logo {
-    max-width: 50px;
-    margin-bottom: 20px;
-    animation: spin 5s linear infinite;
-}  */
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-   
-} 
-
-/* @keyframes gradientFlow {
-    0% {
-      background-position: 0% 50%;
+  
+  /* Keyframes for the 'breathing' effect */
+  @keyframes breathing {
+    0%, 100% {
+      transform: scale(1) translateZ(0);
     }
     50% {
-      background-position: 100% 50%;
+      transform: scale(1.05) translateZ(15px);
+    }
+  }
+  
+  /* Apply the breathing animation */
+  .intense-statement {
+    animation: breathing 3s infinite ease-in-out;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .intense-statement {
+      font-size: 1rem;
+      padding: 20px;
+    }
+  }
+  
+  /* Keyframes for the animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
     }
     100% {
-      background-position: 0% 50%;
+      opacity: 1;
+      transform: scale(1);
     }
-  } */
-
-
-/* Logo floating animation */
- /* @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }  */
-  
-  /* .logo {
-      max-width: 120px;
-      margin-bottom: 20px;
-      animation: float 6s ease-in-out infinite;
   }
-   */
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    p.intense-statement {
+      font-size: 2.5rem;
+      padding: 40px 20px;
+      max-width: 90%;
+    }
+  }
+  
+  /* Ensure the background image div is positioned under the text */
+  .face-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path_to_your_background_image.png'); /* The path to your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1; /* Lower z-index than text */
+  }
+  
+
+  form input,
+  form button {
+    width: 90%; /* Match the input/button width to the container's */
+  }
+
+
 
 /* Styling the form */
 form {
@@ -156,27 +438,63 @@ form {
     animation: fadeInUp 0.5s both;
 }
 
-form label,
-form input,
 form button {
-    display: block;
-    width: calc(100% - 20px);
-    margin-bottom: 20px;
-}
+    display: block; /* Set the button to block to take the full width */
 
-form label {
-    text-align: left;
-    font-weight: 500;
-    color: #bbbbbb;
+    width: 80%; /* Adjust based on preference */
+    max-width: 400px; /* Adjust based on preference */
+    margin: 20px auto; /* Centers the button horizontally */
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-image: linear-gradient(45deg, #50b849 0%, #459a3e 100%);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-image 0.5s ease, transform 0.2s ease;
 }
 
 form input {
+    display: block;
+    width: 80vw;
+     /* Use a percentage of the viewport width */
+    max-width: 400px;
+     /* Set a max-width to prevent it from getting too wide */
+    margin-bottom: 20px;
     padding: 15px;
     border: 1px solid #333;
     background-color: #262626;
     border-radius: 4px;
     font-size: 16px;
     color: #ddd;
+    /* ... other styles ... */
+}
+form input, form button {
+    width: 80vw; /* Adjust as needed, could be less like 60vw or 70vw */
+    max-width: 400px; /* This will prevent them from being too wide */
+    margin-left: auto;
+    margin-right: auto;
+    /* Other styles */
+}
+
+h1 {
+    color: #ffffff; /* White text */
+    font-size: 2.5rem; /* Example size, adjust as needed */
+    font-weight: 1500; /* Bold font weight */
+    margin-top: 1rem; /* Adjust this value to create more space */
+    margin-bottom: 1rem; /* Space below the heading, adjust as needed */
+    text-align: center; /* Centered text */
+    /* padding-top: 300rem; */
+     padding-top: 2rem; 
+
+    line-height: 1.2; /* Adjust line height for better readability */
+  }
+  
+  form label {
+    text-align: left; /* Align label text to the left */
+    display: block;
+    width: 100%;
+    /* Other styles */
 }
 
 /* Dynamic button */
@@ -218,32 +536,21 @@ form button:hover {
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-        margin: 0 10px; /* Add some space on the sides on smaller screens */
-    }
-
-    .logo {
-        max-width: 80px; /* Adjust logo size for smaller screens */
-    }
-
-    form label,
-    form input,
-    form button {
-        width: 100%;
-    }
+  
 
     /* Adjust font sizes for smaller screens */
     h1 {
         color: #ffffff; /* White text */
         font-size: 2.5rem; /* Example size, adjust as needed */
         font-weight: 700; /* Bold font weight */
-        margin-top: 700rem; /* Adjust this value to create more space */
+        margin-top: 1rem; /* Adjust this value to create more space */
         margin-bottom: 1rem; /* Space below the heading, adjust as needed */
         text-align: center; /* Centered text */
+        /* padding-top: 300rem; */
 
         text-align: center; /* Centered text */
         line-height: 1.2; /* Adjust line height for better readability */
+        justify-content: center;
       }
       
       /* Responsive adjustments for h1 */
