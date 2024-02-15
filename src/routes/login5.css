@@ -29,12 +29,12 @@
   }
 
 body {
-    /* font-family: 'Roboto', sans-serif; */
-    font-family: 'FFF Tusj Bold'; 
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'FFF Tusj Bold';  */
     /* Always provide a fallback font */
     /* font-family: 'Honk'; */
      /* Always provide a fallback font */
-     font-family: 'Neon'; 
+     /* font-family: 'Neon';  */
     /* Always provide a fallback font  */
     /* justify-content: center; */
 
@@ -71,6 +71,13 @@ body {
     justify-content: center;
     width: 100%; /* Full width if it’s not a flex item */
     text-align: center; /* Center text within the element itself */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    /* z-index: 1; Ensure it’s above the background */
+    /* animation: neon 1.5s ease-in-out infinite alternate; */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    /* display: inline;  */
+    /* Apply background only to the text */
+    /* padding: 0.5em 1em; Add some padding around the text */
 
 
   } 

@@ -1,10 +1,11 @@
 
-import Img3 from '~/routes/3.png?jsx';import { component$, useStore, $ } from '@builder.io/qwik';
+// import Img3 from '~/routes/3.png?jsx';
+import { component$, useStore, $ } from '@builder.io/qwik';
 import './login5.css'; // Assuming you have CSS modules set up or a similar mechanism to include CSS
-import logo from './3.png';
+// import logo from './3.png';
 import logo1 from './1.webp';
-import faceImage from './9.png'
-import componentStyles from './login5.css';
+// import faceImage from './9.png'
+// import componentStyles from './login5.css';
 import TextLoading from "../components/typewriter/typewriter1";
 
 
