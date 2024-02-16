@@ -1,5 +1,4 @@
-import { component$, useLexicalScope, useStore, useVisibleTask$, $ } from '@builder.io/qwik';
-// import styles from './TextLoading.module.css';
+import { component$, useStore, $ } from '@builder.io/qwik';
 
 interface TextItem {
   text: string;
@@ -7,7 +6,6 @@ interface TextItem {
 }
 
 const TextLoading = component$((props: { isVisible: boolean }) => {
-  useLexicalScope();
   const state = useStore({
     items: [
       { text: 'What do shares of ownership in a machine learning model look like?', typed: '' },
@@ -18,51 +16,7 @@ const TextLoading = component$((props: { isVisible: boolean }) => {
     ] as TextItem[],
   });
 
-//   const typeText = $(() => {
-//     state.items.forEach((item, index) => {
-//       let i =  0;
-//       const typeNextChar = () => {
-//         item.typed += item.text[i];
-//         i++;
-//         if (i < item.text.length) setTimeout(typeNextChar,  50); // Delay between characters
-//       };
-//       typeNextChar();
-//     });
-//   });
-
-
-
-
-//   const typeText = () => {
-//     state.items.forEach((item, index) => {
-//       let i = 0;
-//       const typeNextChar = () => {
-//         item.typed += item.text[i];
-//         i++;
-//         if (i < item.text.length) {
-//           setTimeout(typeNextChar, 50); // Delay between characters
-//         }
-//       };
-//       typeNextChar();
-//     });
-//   };
-
-// const typeText = $(() => {
-//     state.items.forEach((item, index) => {
-//       let i = 0;
-//       const typeNextChar = () => {
-//         item.typed += item.text[i];
-//         i++;
-//         if (i < item.text.length) {
-//           setTimeout(typeNextChar, 50); // Delay between characters
-//         }
-//       };
-//       typeNextChar();
-//     });
-//   });
-
-
-const typeText = $(() => {
+  const typeText = $(() => {
     state.items.forEach((item) => {
       let i = 0;
       const typeNextChar = () => {
@@ -75,36 +29,25 @@ const typeText = $(() => {
     });
   });
 
-  useVisibleTask$(({ track }) => {
-    track(() => props.isVisible);
+  // Track props.isVisible using a QRL
+  $(() => {
     if (props.isVisible) {
       typeText();
     }
   });
 
-
-
   return (
-//     <div class={styles.container}>
-//       <div id="type-container">
-//         <ul class="gradient-text-list">
-//           {state.items.map((item, index) => (
-//             <li key={index}>{item.typed}</li>
-//           ))}
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// });
-<ul class="gradient-text-list">
-  {state.items.map((item, index) => (
-    <>
-      <li key={index}>{item.typed}</li>
-      {index !== state.items.length - 1 && <a href="#your-link" class="divider-link"></a>}
-    </>
-  ))}
-</ul>
-);
+    <ul class="gradient-text-list">
+      {state.items.map((item, index) => (
+        <>
+          <li key={index}>{item.typed}</li>
+          {index !== state.items.length - 1 && (
+            <a href="#your-link" class="divider-link"></a>
+          )}
+        </>
+      ))}
+    </ul>
+  );
 });
 
 export default TextLoading;
