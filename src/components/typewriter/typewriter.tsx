@@ -1,5 +1,5 @@
 import { component$, useLexicalScope, useStore, useVisibleTask$, $ } from '@builder.io/qwik';
-import styles from './TextLoading.module.css';
+// import styles from './TextLoading.module.css';
 
 interface TextItem {
   text: string;
