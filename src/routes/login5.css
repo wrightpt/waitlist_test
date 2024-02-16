@@ -424,7 +424,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('path_to_your_background_image.png'); /* The path to your background image */
+    /* background-image: url('path_to_your_background_image.png'); The path to your background image */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

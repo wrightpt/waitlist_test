@@ -6,7 +6,7 @@ import './login5.css'; // Assuming you have CSS modules set up or a similar mech
 import logo1 from './1.webp';
 // import faceImage from './9.png'
 // import componentStyles from './login5.css';
-import TextLoading from "../components/typewriter/typewriter1";
+import TextLoading from "../components/typewriter/typewriter";
 
 
 
