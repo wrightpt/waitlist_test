@@ -8,7 +8,7 @@
 
   }
 
-@font-face {
+/* @font-face {
     font-family: 'Honk';
     src: url('./Honk-Regular-VariableFont_MORF\,SHLN.woff2') format('woff2');
        
@@ -16,8 +16,8 @@
     font-style: normal;
     /* font-display: swap; This will show a fallback font until the custom font has loaded */
 
-  }
-
+  /* } */ 
+  
 @font-face {
     font-family: 'FFF Tusj Bold';
     src: url('./FFF_Tusj.woff2') format('woff2');
