@@ -6,7 +6,7 @@ import './login5.css'; // Assuming you have CSS modules set up or a similar mech
 import logo1 from './1.webp';
 // import faceImage from './9.png'
 // import componentStyles from './login5.css';
-import TextLoading from "../components/typewriter/typewriter";
+import TextLoading from "../components/typewriter/tw5";
 
 
 
@@ -23,7 +23,7 @@ export default component$(() => {
     errorMessage: null,
   });
 
-  const isVisible = true; // Replace with actual logic to determine visibility
+   const isVisible = true; // Replace with actual logic to determine visibility
 
 
   return (
@@ -37,19 +37,18 @@ export default component$(() => {
       <div class="gradient-text"> Monero Prediction Market
       <div>
       <h1>Insights into Action </h1>
+      
       <TextLoading isVisible={isVisible} />
+      {/* {showTextLoading ? <TextLoading /> : null} */}
+
+
+
+      {/* <TextLoading isVisible={isVisible} /> */}
     </div>
 
       <div id="type-container">
 
-      {/* <ul class="gradient-text-list"> */}
-             {/* <li>What do shares of ownership in a machine learning model look like?</li> 
-
-    <li>Can we tailor models to invest on behalf of your best interest?</li>
-    <li>A marketplace where models compete for your dollars?</li>
-    <li>Tailor the experience to match your risk tolerance, goals, and intentions.</li>
-    <li>If this is what excites you, welcome to the Future!</li>
-  </ul> */}
+    
   </div>
 
       

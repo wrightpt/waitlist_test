@@ -1,11 +1,15 @@
-import { component$,  useStyles$ } from "@builder.io/qwik";
+import { component$,Slot,  useStyles$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
 // import Header from "../components/starter/header/header";
 // import Footer from "../components/starter/footer/footer";
+import TextLoading from "../components/typewriter/typewriter";
 
-import styles from "./styles.css?inline";
+  import styles from "./styles.css?inline";
+
+ const isVisible = true; // Replace with actual logic to determine visibility
+
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -24,15 +28,24 @@ export const useServerTimeLoader = routeLoader$(() => {
   };
 });
 
-export default component$(() => {
-  useStyles$(styles);
-  return (
+ export default component$(() => {
+      // useStyles$(styles);
+   return (
+
     <>
+      {/* Shared components like headers or navigation go here */}
       {/* <Header /> */}
-      {/* <main> */}
-        {/* <Slot /> */}
-      {/* </main> */}
+      <main>
+      {/* <TextLoading isVisible={isVisible} /> */}
+
+        <Slot /> This is where your index.tsx content will be rendered
+      </main>
+      {/* Shared components like footers go here */}
       {/* <Footer /> */}
-    </>
+     </>
   );
 });
+    
+
+
+ 
