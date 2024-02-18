@@ -38,7 +38,8 @@ export const useServerTimeLoader = routeLoader$(() => {
       <main>
       {/* <TextLoading isVisible={isVisible} /> */}
 
-        <Slot /> This is where your index.tsx content will be rendered
+        <Slot /> 
+        {/* This is where your index.tsx content will be rendered */}
       </main>
       {/* Shared components like footers go here */}
       {/* <Footer /> */}

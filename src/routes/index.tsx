@@ -6,7 +6,8 @@ import './login5.css'; // Assuming you have CSS modules set up or a similar mech
 import logo1 from './1.webp';
 // import faceImage from './9.png'
 // import componentStyles from './login5.css';
-import TextLoading from "../components/typewriter/tw5";
+import TextLoading from "../components/typewriter/tw11";
+import TypingText from "../components/writer/writer";
 
 
 
@@ -37,7 +38,8 @@ export default component$(() => {
       <div class="gradient-text"> Monero Prediction Market
       <div>
       <h1>Insights into Action </h1>
-      
+      <TypingText />
+
       <TextLoading isVisible={isVisible} />
       {/* {showTextLoading ? <TextLoading /> : null} */}
 
